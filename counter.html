@@ -7,8 +7,12 @@
       let counter =0;
 function count(){
   counter +=1;
-  alert(counter);
+  document.querySelector('h1').innerHTML = counter;
+  if(counter % 10===0){
+    alert('Count is now ${counter}');
+  }
 }
+document.querySelector('button').onclick =count;
 
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,8 +20,8 @@ function count(){
   </head>
 
   <body>
-    <h1>Hello!</h1>
-    <button onclick= "count()" >counter here</button>
+    <h1>0</h1>
+    <button>counter here</button>
   </body>
 </html>
 
