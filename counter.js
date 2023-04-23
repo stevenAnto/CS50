@@ -1,13 +1,19 @@
 let counter =0;
+let total=0;
 function count(){
   counter +=1;
-  document.querySelector('h1').innerHTML = counter;
+  const heading =document.querySelector('h1');
+  heading.innerHTML = counter;
   if(counter % 10===0){
-    alert('Count is now ${counter}');
+    total += Number(counter)
+    heading.innerHTML = total;
+    counter =0;
   }
 }
 //Para esperar a que cargue todo
+//DOMContentLoaded 
 document.addEventListener('DOMContentLoaded',function (){
-  document.querySelector('button').onclick =count;
+  document.querySelector('button').addEventListener('click',count)
+  //document.querySelector('button').onclick =count;
 
 });
