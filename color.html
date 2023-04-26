@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
       document.addEventListener('DOMContentLoaded',()=>{
-        document.querySelector('select').onchange =function(){
+        document.querySelector('select').onchange =function(){//si cambio por un arrow function, no funciona?
           console.log('entro a la fucntion')
           document.querySelector('#hello').style.color= this.value;
           console.log('salio function');
