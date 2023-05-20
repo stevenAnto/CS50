@@ -2,12 +2,15 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def index(request):
-    return HttpResponse("Hello")
+    return render(request,"hello/index.html")
 
 def esteven(request):
     return HttpResponse("Helo, Esteven")
 
 def greet(request, name):
-    return HttpResponse(f"Hello, {name}")
+    return render(request, "hello/greet.html",{
+        "name":name.capitalize()
+        }
+            )
 
 # Create your views here.
