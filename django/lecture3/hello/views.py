@@ -10,7 +10,7 @@ def esteven(request):
 def greet(request, name):
     return render(request, "hello/greet.html",{
         "name":name.capitalize()
-        }
-            )
-
+        })
+def add(request):
+    return render(request,"tasks/add.html")
 # Create your views here.
