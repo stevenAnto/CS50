@@ -26,8 +26,9 @@ def add(request):
             #toma la data que es tarea
             task=form.cleaned_data["task"]
             #lo agrego a la lista
-            request.session["tasks"].append(task)
-           # request.session["tasks"]+=[task]
+            #request.session["tasks"].append(task)
+            #request.session["tasks"].append([task])
+            request.session["tasks"]+=[task]
             print("asi quedo la lista en add",request.session["tasks"])
             #Automaticamente refresa a la otra pagina
             return HttpResponseRedirect(reverse("tasks:index"))
