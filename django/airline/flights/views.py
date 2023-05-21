@@ -7,10 +7,12 @@ def index(request):
 
 def flight(request, flight_id):
     print("enftro flight")
-
     flight = Flight.objects.get(id=flight_id)
+    passengers= flight.passengers.all()
     return render(request, "flights/flight.html",
-            {"flight":flight}
+            {"flight":flight,
+                "passengers":passengers}
+
             )
     #como hay una relacion de muchos a muchos
 # Create your views here.
