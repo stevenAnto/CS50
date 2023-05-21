@@ -8,7 +8,6 @@ class NewTaskForm(forms.Form):
     task = forms.CharField(label="New Tasks")
 
 def index(request):
-    print("entro index",request.session["tasks"])
     if "tasks" not in request.session:
         request.session["tasks"]=[]
     return render(request,"tasks/index.html",{"tasks":request.session["tasks"]})
