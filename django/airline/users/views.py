@@ -6,6 +6,7 @@ from django.urls import reverse
 def index(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse("login"))
+    return render(request,"users/user.html")
 
 def login_view(request):
     print("solo entro a login_view")
@@ -14,10 +15,13 @@ def login_view(request):
         username=request.POST["username"]
         password=request.POST["password"]
         user = authenticate(request,username=username, password=password)
+        print("este es el user,",user)
         if user is not None:
+            print("Usuario valido")
             login(request, user)
             return HttpResponseRedirect(reverse("index"))
         else:
+            print("usuario no valido")
             return render(request,"users/login.html",{
                 "message":"invalidad credentaial"
                 }
