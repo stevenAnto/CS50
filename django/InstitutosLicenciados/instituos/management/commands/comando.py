@@ -14,5 +14,7 @@ class Command(BaseCommand):
         with open(csv_file,'r') as file:
             reader = csv.reader(file)
             for row in reader:
+                print("entro a for")
+                print("entro ",row[1],"jeje")
                 instituto = InstitutosConLicencia(region=row[0],name=row[1],personJuridica=row[2],                        sedeLocal=row[3],direccion=row[4],programasLicenciados=row[5],nivel=row[6],modalidad=row[7])
                 instituto.save()
