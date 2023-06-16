@@ -14,7 +14,6 @@ fetch("https://api.apilayer.com/exchangerates_data/convert?to=GBP&from=EUR&amoun
     console.log(data)
     objetor=data
     const resultado =data.result;
-    document.querySelector('body').innerHTML=`1 ${data.query.from} to ${data.query.to} is ${data.result}` 
+    document.querySelector('body').innerHTML=`1 ${data.query.from} to ${data.query.to} is ${data.result}`
   })
   .catch(error => console.log('error', error));
-
